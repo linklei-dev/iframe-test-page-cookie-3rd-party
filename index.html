@@ -19,6 +19,8 @@
         //cookie.set('testCookie', '1');
         // TESTE:
         cookie.set('testCookie', '1', { domain: 'lar.linklei.com.br' })
+        console.log("set testCookie");
+        console.log("testCookie get value: ", cookie.get('testCookie'));
         
         if (cookie.get('testCookie') === "1") {
             isEnable = true;
