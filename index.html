@@ -24,7 +24,7 @@
         return isCookieEnabled;
     };
     const eraseCookie = (name) => {
-        document.cookie = name+'=; Max-Age=-99999999;';
+        document.cookie = "testCookie=0; path=/";
     };
     (function () {
         window.addEventListener('message', event => {
