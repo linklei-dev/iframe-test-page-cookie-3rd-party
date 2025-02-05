@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>LinkLei</title>
+    <script src="https://unpkg.com/cookiejs/dist/cookie.min.js" defer></script>
 </head>
 <body>
 <script>
@@ -14,19 +15,20 @@
         }
         return isCookieEnabled;
         */
-        let isCookieEnabled = false;
-        document.cookie = "testCookie=1; path=/";
-        //const cookies = document.cookie;
-        isCookieEnabled = document.cookie.includes("testCookie=1");
-        console.log("isCookieEnabled: ", isCookieEnabled);
-        
-        //eraseCookie("testcookie");
-        return isCookieEnabled;
+        let isEnable = false;
+        Cookies.set('testCookie', '1');
+        if (Cookies.get('testCookie') === "1") {
+            isEnable = true;
+        }
+        //Cookies.remove('testCookie');
+        return isEnable;
     };
     const eraseCookie = (name) => {
         document.cookie = "testCookie=0; path=/";
     };
-    (function () {
+
+    document. addEventListener('DOMContentLoaded', function() {
+        
         window.addEventListener('message', event => {
             try {
                 let data = JSON.parse(event.data)
@@ -41,7 +43,9 @@
                 console.error(e)
             }
         });
-    })();
+        
+    });
+    
 </script>
 </body>
 </html>
