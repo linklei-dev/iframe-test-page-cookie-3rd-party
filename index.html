@@ -15,8 +15,11 @@
         return isCookieEnabled;
         */
         let isCookieEnabled = false;
-        document.cookie = "testcookie";
-        isCookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+        document.cookie = "testCookie=1; path=/";
+        const cookies = document.cookie;
+        isCookieEnabled = cookies.includes('testCookie=1');
+        console.log("isCookieEnabled: ", isCookieEnabled);
+        
         eraseCookie("testcookie");
         return isCookieEnabled;
     };
