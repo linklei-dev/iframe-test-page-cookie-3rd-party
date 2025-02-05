@@ -16,8 +16,8 @@
         */
         let isCookieEnabled = false;
         document.cookie = "testCookie=1; path=/";
-        const cookies = document.cookie;
-        isCookieEnabled = cookies.includes('testCookie=1');
+        //const cookies = document.cookie;
+        isCookieEnabled = document.cookie.includes("testCookie=1");
         console.log("isCookieEnabled: ", isCookieEnabled);
         
         //eraseCookie("testcookie");
