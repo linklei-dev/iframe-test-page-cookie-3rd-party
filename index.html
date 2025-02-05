@@ -17,8 +17,12 @@
         let isCookieEnabled = false;
         document.cookie = "testcookie";
         isCookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+        eraseCookie("testcookie");
         return isCookieEnabled;
-    }
+    };
+    const eraseCookie = (name) => {
+        document.cookie = name+'=; Max-Age=-99999999;';
+    };
     (function () {
         window.addEventListener('message', event => {
             try {
