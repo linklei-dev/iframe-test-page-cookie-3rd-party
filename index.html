@@ -6,11 +6,17 @@
 <body>
 <script>
     const checkCookiesEnable = () => {
+        /*
         let isCookieEnabled = (window.navigator.cookieEnabled) ? true : false;
         if (typeof window.navigator.cookieEnabled == "undefined" && !isCookieEnabled) {
             document.cookie = "testcookie";
             isCookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
         }
+        return isCookieEnabled;
+        */
+        let isCookieEnabled = false;
+        document.cookie = "testcookie";
+        isCookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
         return isCookieEnabled;
     }
     (function () {
