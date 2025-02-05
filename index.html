@@ -16,11 +16,11 @@
         return isCookieEnabled;
         */
         let isEnable = false;
-        Cookies.set('testCookie', '1');
-        if (Cookies.get('testCookie') === "1") {
+        cookie.set('testCookie', '1');
+        if (cookie.get('testCookie') === "1") {
             isEnable = true;
         }
-        //Cookies.remove('testCookie');
+        //cookie.remove('testCookie');
         return isEnable;
     };
     const eraseCookie = (name) => {
